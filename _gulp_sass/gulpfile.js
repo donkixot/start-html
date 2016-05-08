@@ -28,21 +28,9 @@ gulp.task('styles', function () {
 	.pipe(browserSync.stream());
 });
 
-gulp.task('scripts', function() {
-	return gulp.src([
-		'./app/libs/modernizr/modernizr.js',
-		'./app/libs/jquery/jquery-1.11.2.min.js',
-		'./app/libs/animate/animate-css.js',
-		'./app/libs/plugins-scroll/plugins-scroll.js',
-		])
-		.pipe(concat('libs.js'))
-		// .pipe(uglify()) //Minify libs.js
-		.pipe(gulp.dest('./app/js/'));
-});
 
 gulp.task('watch', function () {
 	gulp.watch('app/sass/*.sass', ['styles']);
-	gulp.watch('app/libs/**/*.js', ['scripts']);
 	gulp.watch('app/js/*.js').on("change", browserSync.reload);
 	gulp.watch('app/*.html').on('change', browserSync.reload);
 });
