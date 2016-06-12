@@ -7,7 +7,7 @@ var gulp         = require('gulp'),
 		concat       = require('gulp-concat'),
 		uglify       = require('gulp-uglify');
 
-gulp.task('browser-sync', ['styles', 'scripts'], function() {
+gulp.task('browser-sync', ['styles'], function() {
 		browserSync.init({
 				server: {
 						baseDir: "./app"
